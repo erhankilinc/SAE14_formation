@@ -181,7 +181,6 @@ main .btn:hover {
 .quarter-circle-img img {
     width: 100%;
     height: 100%;
-    height: 150%;
     object-fit: cover;
     position: absolute;
     top: -50px;
@@ -300,6 +299,7 @@ footer .social-links a:hover {
 }
 
 /* ---------------------------------------------------------------------- ANIMATIONS ---------------------------------------------------------------------------------------------/*
+  
   /* Rebond des points (chargement) */
 @keyframes bounce {
 
@@ -331,3 +331,4 @@ footer .social-links a:hover {
         opacity: 0;
         visibility: hidden;
     }
+}
