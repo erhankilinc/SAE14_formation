@@ -3,53 +3,138 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: #f1f1f6;
     color: #333;
+  /* Reset des styles par défaut du navigateur */
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+  }
+  /* Loader */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  #loader span {
+    animation: dots 1.5s;
+  }
+  @keyframes dots {
+    0% { content: "."; }
+    33% { content: ".."; }
+    66% { content: "..."; }
   }
   
+  /* Header */
   header {
     background-color: white;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #1e2a3a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   
-  header .logo img {
-    height: 40px;
+  /* Logo */
+  header .logo {
+    font-size: 24px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    color: #f5a623;
   }
   
+  header .logo span {
+    color: #0071e3;
+    color: #fff;
+  }
+  
+  /* Menu principal */
   header ul {
     display: flex;
     list-style: none;
     padding: 0;
+    display: flex;
   }
   
   header ul li {
     margin-right: 20px;
+    margin: 0 15px;
   }
   
+  header ul li a {
+    color: white;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-size: 1.1rem;
+  }
+  
+  header ul li a:hover {
+    color: #0071e3;
+    color: #f5a623;
+  }
+  
+  /* Navigation */
   header nav button {
     background-color: transparent;
     border: 1px solid #333;
     color: #333;
+    background-color: #f5a623;
+    color: white;
+    border: none;
     padding: 10px 20px;
     border-radius: 30px;
     font-size: 14px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
   }
   
   header nav button:hover {
     background-color: #f1f1f6;
+    background-color: #d57f1a;
   }
   
+  /* Section principale - Texte */
   .text {
     text-align: center;
+  /* Main Section */
+  main.text {
     padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+  main h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
   }
   
   .text h1 {
     font-size: 36px;
+  main h1 span {
+    color: #f5a623;
     font-weight: bold;
     color: #333;
   }
@@ -58,214 +143,203 @@ body {
     font-size: 18px;
     line-height: 1.5;
     color: #666;
+  main p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
   }
   
   .text .argument {
+  main p .argument {
     font-weight: bold;
     color: #0071e3;
+    color: #f5a623;
   }
   
+  /* Boutons */
   .btn {
     background-color: #0071e3;
+  main .btn {
+    background-color: #f5a623;
     color: white;
     padding: 15px 30px;
+    font-size: 1.2rem;
     border: none;
     border-radius: 50px;
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
   }
   
   .btn:hover {
     background-color: #005bb5;
+  main .btn:hover {
+    background-color: #d57f1a;
   }
   
-  .hero-image {
-    width: 100%;
-    height: 400px;
-    background-image: url('https://www.apple.com/v/iphone-15/d/images/overview/hero/hero_iphone_15__dcohvvb8hfuy_large_2x.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 20px;
+  /* Image avec un quart de cercle */
+  /* Quarter Circle */
+  .quarter-circle {
+    position: relative;
+    height: 300px;
     background-color: #f1f1f6;
   }
+  .quarter-circle-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 400px;
+    background-color: #1e2a3a;
+    overflow: hidden;
+  }
   
-  footer a {
+  .quarter-circle-img img {
+    width: 100%;
+    height: auto;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -50px;
+    left: 0;
+  }
+  
+  /* Formations populaires */
+  /* Section des formations populaires */
+  #formations-populaires {
+    padding: 60px 20px;
+    background-color: white;
+    background-color: #f5f5f5;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  #formations-populaires h2 {
+    font-size: 30px;
+    color: #333;
+    font-size: 2.5rem;
+    color: #1e2a3a;
+    margin-bottom: 40px;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 20px;
+    font-size: 1.6rem;
+    margin-top: 15px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+    font-size: 1rem;
+    margin: 15px 0;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card .btn {
+    margin-top: 20px;
+    background-color: #f5a623;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .card .btn:hover {
+    background-color: #d57f1a;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background-color: #1e2a3a;
+    color: white;
+    padding: 20px;
+    background-color: #f1f1f6;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 14px;
+    color: #666;
+  footer .footer-content p {
+    margin-bottom: 10px;
+  }
+  
+  footer .social-links a {
     text-decoration: none;
     color: #0071e3;
+    margin: 0 10px;
+    font-size: 20px;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
   }
   
-  footer a:hover {
-    text-decoration: underline;
+  footer .social-links a:hover {
+    color: #005bb5;
+    color: #f5a623;
   }
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color : #f1f1f6;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-/* Header */
-header {
-  background-color: white;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-/* Logo */
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-header .logo span {
-  color: #0071e3;
-}
-/* Menu principal */
-header ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
-header ul li {
-  margin-right: 20px;
-}
-header ul li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-}
-header ul li a:hover {
-  color: #0071e3;
-}
-/* Navigation */
-header nav button {
-  background-color: transparent;
-  border: 1px solid #333;
-  color: #333;
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 14px;
-  cursor: pointer;
-}
-header nav button:hover {
-  background-color: #f1f1f6;
-}
-/* Section principale - Texte */
-.text {
-  text-align: center;
-  padding: 60px 20px;
-}
-.text h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #333;
-}
-.text p {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #666;
-}
-.text .argument {
-  font-weight: bold;
-  color: #0071e3;
-}
-/* Boutons */
-.btn {
-  background-color: #0071e3;
-  color: white;
-  padding: 15px 30px;
-  border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-.btn:hover {
-  background-color: #005bb5;
-}
-/* Image avec un quart de cercle */
-.quarter-circle {
-  position: relative;
-  height: 300px;
-  background-color: #f1f1f6;
-}
-.quarter-circle-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.quarter-circle-img img {
-  width: 100%;
-  height: auto;
-}
-/* Formations populaires */
-#formations-populaires {
-  padding: 60px 20px;
-  background-color: white;
-  text-align: center;
-}
-#formations-populaires h2 {
-  font-size: 30px;
-  color: #333;
-  margin-bottom: 40px;
-}
-.cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-.card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  width: 300px;
-  margin: 10px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.card h3 {
-  font-size: 22px;
-  color: #333;
-  margin-top: 20px;
-}
-.card p {
-  font-size: 16px;
-  color: #666;
-  margin-top: 10px;
-}
-.card .btn {
-  margin-top: 20px;
-}
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #f1f1f6;
-}
-footer p {
-  font-size: 14px;
-  color: #666;
-}
-footer .social-links a {
-  text-decoration: none;
-  color: #0071e3;
-  margin: 0 10px;
-  font-size: 20px;
-}
-footer .social-links a:hover {
-  color: #005bb5;
-}
+  
+    
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header ul {
+      display: none;
+    }
+    header nav button {
+      width: 100%;
+      margin: 10px 0;
+    }
+    .cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .card {
+      width: 80%;
+    }
+  }
